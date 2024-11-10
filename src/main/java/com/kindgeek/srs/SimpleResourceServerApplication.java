@@ -1,4 +1,4 @@
-package com.kindgeek.simpleresourceserver;
+package com.kindgeek.srs;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

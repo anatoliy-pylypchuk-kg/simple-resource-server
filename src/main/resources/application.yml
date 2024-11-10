@@ -2,5 +2,21 @@ spring:
   application:
     name: simple-resource-server
 
+  datasource:
+    url: jdbc:h2:mem:srs
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: password
+
+  jpa:
+    defer-datasource-initialization: true
+    open-in-view: false
+
+  h2:
+    console:
+      enabled: true
+      settings:
+        web-admin-password: "bfbdfaf70455090e22b0d5f95f5ef587132d0beb24d2d8515a7a258aec94bd7786480c1bca05d1c75b547937580cd086bfc2a245ea1dd3d76ce4dbebffc4ec41"
+
 server:
   port: 8000

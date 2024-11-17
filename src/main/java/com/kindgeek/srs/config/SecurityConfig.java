@@ -36,6 +36,7 @@ public class SecurityConfig {
 
         http.authorizeHttpRequests(requests -> {
             requests.requestMatchers(toH2Console()).permitAll();
+            requests.requestMatchers("/swagger-ui.html", "/swagger-ui/**", "/v3/api-docs/**").permitAll();
             requests.anyRequest().authenticated();
         });
 

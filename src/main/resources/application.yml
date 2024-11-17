@@ -22,7 +22,36 @@ spring:
     console:
       enabled: true
       settings:
+        # SHA-512 hash of 'password1234'
         web-admin-password: "bfbdfaf70455090e22b0d5f95f5ef587132d0beb24d2d8515a7a258aec94bd7786480c1bca05d1c75b547937580cd086bfc2a245ea1dd3d76ce4dbebffc4ec41"
+
+  devtools:
+    restart:
+      log-condition-evaluation-delta: false
 
 server:
   port: 8000
+
+springdoc:
+  api-docs:
+    version: OPENAPI_3_1
+  enable-spring-security: true
+  swagger-ui:
+    operations-sorter: alpha
+    tags-sorter: alpha
+    display-operation-id: true
+    display-request-duration: true
+    deep-linking: true
+    oauth:
+      client-id: swagger
+      app-name: Swagger
+      use-pkce-with-authorization-code-grant: true
+    persist-authorization: true
+
+simple-resource-server:
+  swagger:
+    title: Simple Resource Server
+    version: @project.version@
+    server-name: Local
+    server-uri: http://localhost:${server.port}
+    openid-config-uri: ${spring.security.oauth2.resourceserver.jwt.issuer-uri}/.well-known/openid-configuration

@@ -33,6 +33,7 @@ public class Account {
 
     @NotNull
     @Column(name = "name", nullable = false)
+    @Setter
     private String name;
 
     @NotNull

@@ -2,6 +2,10 @@ spring:
   application:
     name: simple-resource-server
 
+  mvc:
+    problemdetails:
+      enabled: true
+
   security:
     oauth2:
       resourceserver:
@@ -41,6 +45,7 @@ springdoc:
     tags-sorter: alpha
     display-operation-id: true
     display-request-duration: true
+    default-models-expand-depth: 0
     deep-linking: true
     oauth:
       client-id: swagger

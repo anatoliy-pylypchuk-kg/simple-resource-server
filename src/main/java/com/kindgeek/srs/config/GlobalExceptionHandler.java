@@ -1,8 +1,8 @@
-package com.kindgeek.srs.problem;
+package com.kindgeek.srs.config;
 
-import com.kindgeek.srs.exception.AccountHasCardsException;
-import com.kindgeek.srs.exception.AccountNotFoundException;
-import com.kindgeek.srs.exception.CardNotFoundException;
+import com.kindgeek.srs.application.accounts.exceptions.AccountHasCardsException;
+import com.kindgeek.srs.application.accounts.exceptions.AccountNotFoundException;
+import com.kindgeek.srs.application.cards.exceptions.CardNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ProblemDetail;
 import org.springframework.web.bind.annotation.ExceptionHandler;

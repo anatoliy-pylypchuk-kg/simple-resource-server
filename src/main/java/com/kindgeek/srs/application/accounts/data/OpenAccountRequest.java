@@ -1,4 +1,4 @@
-package com.kindgeek.srs.dto.request;
+package com.kindgeek.srs.application.accounts.data;
 
 import jakarta.validation.constraints.NotNull;
 

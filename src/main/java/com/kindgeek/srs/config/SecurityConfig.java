@@ -1,6 +1,5 @@
 package com.kindgeek.srs.config;
 
-import com.kindgeek.srs.properties.ResourceServerProperties;
 import jakarta.servlet.Filter;
 import lombok.SneakyThrows;
 import org.keycloak.adapters.authorization.integration.jakarta.ServletPolicyEnforcerFilter;

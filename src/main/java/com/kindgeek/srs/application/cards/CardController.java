@@ -1,9 +1,8 @@
-package com.kindgeek.srs.controller;
+package com.kindgeek.srs.application.cards;
 
-import com.kindgeek.srs.dto.request.OpenCardRequest;
-import com.kindgeek.srs.dto.response.CardResponse;
+import com.kindgeek.srs.application.cards.data.OpenCardRequest;
+import com.kindgeek.srs.application.cards.data.CardResponse;
 import com.kindgeek.srs.entity.Card_;
-import com.kindgeek.srs.service.CardService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;

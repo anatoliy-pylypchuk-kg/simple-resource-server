@@ -1,13 +1,12 @@
-package com.kindgeek.srs.service;
+package com.kindgeek.srs.application.accounts;
 
-import com.kindgeek.srs.dto.request.OpenAccountRequest;
-import com.kindgeek.srs.dto.request.UpdateAccountRequest;
-import com.kindgeek.srs.dto.response.AccountResponse;
-import com.kindgeek.srs.entity.Account;
-import com.kindgeek.srs.exception.AccountHasCardsException;
-import com.kindgeek.srs.exception.AccountNotFoundException;
-import com.kindgeek.srs.repository.AccountRepository;
-import com.kindgeek.srs.repository.CardRepository;
+import com.kindgeek.srs.application.accounts.data.OpenAccountRequest;
+import com.kindgeek.srs.application.accounts.data.UpdateAccountRequest;
+import com.kindgeek.srs.application.accounts.data.AccountResponse;
+import com.kindgeek.srs.domain.Account;
+import com.kindgeek.srs.application.accounts.exceptions.AccountHasCardsException;
+import com.kindgeek.srs.application.accounts.exceptions.AccountNotFoundException;
+import com.kindgeek.srs.application.cards.CardRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

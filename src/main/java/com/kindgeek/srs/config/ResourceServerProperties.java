@@ -1,4 +1,4 @@
-package com.kindgeek.srs.properties;
+package com.kindgeek.srs.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 

@@ -1,6 +1,6 @@
-package com.kindgeek.srs.controller;
+package com.kindgeek.srs.application.users;
 
-import com.kindgeek.srs.dto.response.UserInfoResponse;
+import com.kindgeek.srs.application.users.dto.UserInfoResponse;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;

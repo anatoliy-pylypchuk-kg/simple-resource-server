@@ -1,6 +1,6 @@
-package com.kindgeek.srs.repository;
+package com.kindgeek.srs.application.accounts;
 
-import com.kindgeek.srs.entity.Account;
+import com.kindgeek.srs.domain.Account;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;

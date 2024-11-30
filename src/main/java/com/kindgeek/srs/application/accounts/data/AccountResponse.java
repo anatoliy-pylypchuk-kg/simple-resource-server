@@ -1,4 +1,4 @@
-package com.kindgeek.srs.dto.response;
+package com.kindgeek.srs.application.accounts.data;
 
 import jakarta.validation.constraints.NotNull;
 import lombok.Builder;

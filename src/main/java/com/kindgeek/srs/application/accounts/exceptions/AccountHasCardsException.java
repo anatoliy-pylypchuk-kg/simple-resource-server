@@ -1,4 +1,4 @@
-package com.kindgeek.srs.exception;
+package com.kindgeek.srs.application.accounts.exceptions;
 
 public class AccountHasCardsException extends RuntimeException {
 

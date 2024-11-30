@@ -1,4 +1,4 @@
-package com.kindgeek.srs.exception;
+package com.kindgeek.srs.application.cards.exceptions;
 
 public class CardNotFoundException extends RuntimeException {
 

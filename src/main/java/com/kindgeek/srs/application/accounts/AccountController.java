@@ -1,10 +1,9 @@
-package com.kindgeek.srs.controller;
+package com.kindgeek.srs.application.accounts;
 
-import com.kindgeek.srs.dto.request.OpenAccountRequest;
-import com.kindgeek.srs.dto.request.UpdateAccountRequest;
-import com.kindgeek.srs.dto.response.AccountResponse;
+import com.kindgeek.srs.application.accounts.data.OpenAccountRequest;
+import com.kindgeek.srs.application.accounts.data.UpdateAccountRequest;
+import com.kindgeek.srs.application.accounts.data.AccountResponse;
 import com.kindgeek.srs.entity.Account_;
-import com.kindgeek.srs.service.AccountService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;

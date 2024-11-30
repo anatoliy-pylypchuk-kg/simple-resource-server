@@ -2,8 +2,16 @@ package com.kindgeek.srs.properties;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
-@ConfigurationProperties(prefix = "simple-resource-server")
-public record ResourceServerProperties(SwaggerProperties swagger) {
+@ConfigurationProperties(prefix = "resource-server")
+public record ResourceServerProperties(Keycloak keycloak, SwaggerProperties swagger) {
+
+    public record Keycloak(
+            String baseUrl,
+            String realm,
+            String clientId,
+            String clientSecret
+    ) {
+    }
 
     public record SwaggerProperties(
             String title,

@@ -37,6 +37,11 @@ public class Account {
     private String name;
 
     @NotNull
+    @Column(name = "currency", nullable = false)
+    @Setter
+    private String currency;
+
+    @NotNull
     @Column(name = "balance", nullable = false)
     private BigDecimal balance;
 

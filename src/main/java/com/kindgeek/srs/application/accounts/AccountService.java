@@ -33,6 +33,7 @@ public class AccountService {
     public AccountResponse openAccount(UUID userId, OpenAccountRequest request) {
         var account = Account.builder()
                 .name(request.name())
+                .currency(request.currency())
                 .ownerId(userId)
                 .balance(BigDecimal.ZERO)
                 .build();
@@ -66,6 +67,7 @@ public class AccountService {
         return AccountResponse.builder()
                 .id(account.getId())
                 .name(account.getName())
+                .currency(account.getCurrency())
                 .balance(account.getBalance())
                 .build();
     }

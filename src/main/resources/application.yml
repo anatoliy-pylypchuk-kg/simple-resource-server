@@ -10,10 +10,10 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: ${resource-server.keycloak.base-url}/realms/${resource-server.keycloak.realm}
+          issuer-uri: http://localhost:8080/realms/lecture
 
   datasource:
-    url: jdbc:h2:mem:srs
+    url: jdbc:h2:mem:resource-server
     driver-class-name: org.h2.Driver
     username: sa
     password: password

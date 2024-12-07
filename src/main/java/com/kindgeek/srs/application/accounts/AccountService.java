@@ -1,12 +1,10 @@
 package com.kindgeek.srs.application.accounts;
 
+import com.kindgeek.srs.application.accounts.data.AccountResponse;
 import com.kindgeek.srs.application.accounts.data.OpenAccountRequest;
 import com.kindgeek.srs.application.accounts.data.UpdateAccountRequest;
-import com.kindgeek.srs.application.accounts.data.AccountResponse;
-import com.kindgeek.srs.domain.Account;
-import com.kindgeek.srs.application.accounts.exceptions.AccountHasCardsException;
 import com.kindgeek.srs.application.accounts.exceptions.AccountNotFoundException;
-import com.kindgeek.srs.application.cards.CardRepository;
+import com.kindgeek.srs.domain.Account;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -21,7 +19,6 @@ import java.util.UUID;
 public class AccountService {
 
     private final AccountRepository accountRepository;
-    private final CardRepository cardRepository;
 
     @Transactional(readOnly = true)
     public Page<AccountResponse> getAccounts(UUID userId, Pageable pageable) {
@@ -54,10 +51,6 @@ public class AccountService {
     public void closeAccount(UUID userId, Long id) {
         if (!accountRepository.existsByIdAndOwnerId(id, userId)) {
             throw new AccountNotFoundException(id);
-        }
-
-        if (cardRepository.existsByAccountId(id)) {
-            throw new AccountHasCardsException(id);
         }
 
         accountRepository.deleteById(id);

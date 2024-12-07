@@ -1,6 +1,5 @@
 package com.kindgeek.srs.config;
 
-import com.kindgeek.srs.application.accounts.exceptions.AccountHasCardsException;
 import com.kindgeek.srs.application.accounts.exceptions.AccountNotFoundException;
 import com.kindgeek.srs.application.cards.exceptions.CardNotFoundException;
 import org.springframework.http.HttpStatus;
@@ -13,13 +12,6 @@ import java.net.URI;
 
 @RestControllerAdvice
 public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
-
-    @ExceptionHandler(AccountHasCardsException.class)
-    public ProblemDetail handleAccountHasCardsException(AccountHasCardsException e) {
-        var problemDetail = ProblemDetail.forStatusAndDetail(HttpStatus.BAD_REQUEST, e.getMessage());
-        problemDetail.setType(URI.create("/problems/accounts/has-cards"));
-        return problemDetail;
-    }
 
     @ExceptionHandler(AccountNotFoundException.class)
     public ProblemDetail handleAccountNotFoundException(AccountNotFoundException e) {

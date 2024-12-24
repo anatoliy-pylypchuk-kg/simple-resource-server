@@ -38,7 +38,7 @@ public class CardService {
 
         var card = Card.builder()
                 .nameOnCard(request.nameOnCard())
-                .cardNumber(faker.finance().creditCard(Finance.CreditCardType.MASTERCARD))
+                .cardNumber(faker.finance().creditCard(Finance.CreditCardType.MASTERCARD).replace("-", ""))
                 .expiryDate(LocalDate.now().plusYears(4))
                 .cvv(faker.numerify("###"))
                 .account(account)

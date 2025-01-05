@@ -1,15 +1,20 @@
 package com.kindgeek.srs.config;
 
+import jakarta.servlet.Filter;
 import lombok.SneakyThrows;
+import org.keycloak.adapters.authorization.integration.jakarta.ServletPolicyEnforcerFilter;
+import org.keycloak.representations.adapters.config.PolicyEnforcerConfig;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.oauth2.server.resource.web.authentication.BearerTokenAuthenticationFilter;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 import org.springframework.security.web.util.matcher.RequestMatcher;
 
+import java.util.Map;
 import java.util.stream.Stream;
 
 import static org.springframework.boot.autoconfigure.security.servlet.PathRequest.toH2Console;
@@ -28,8 +33,10 @@ public class SecurityConfig {
     @Bean
     @SuppressWarnings({"Convert2MethodRef", "squid:S1612"}) // Lambda-expressions look nicer here
     @SneakyThrows
-    SecurityFilterChain securityFilterChain(HttpSecurity http) {
+    SecurityFilterChain securityFilterChain(HttpSecurity http, ResourceServerProperties props) {
         http.oauth2ResourceServer(server -> server.jwt(withDefaults()));
+
+        http.addFilterAfter(policyEnforcerFilter(props.keycloak()), BearerTokenAuthenticationFilter.class);
 
         http.authorizeHttpRequests(requests -> {
             requests.requestMatchers(ALLOW_ALL_REQUEST_MATCHERS).permitAll();
@@ -47,5 +54,23 @@ public class SecurityConfig {
         );
 
         return http.build();
+    }
+
+    private Filter policyEnforcerFilter(ResourceServerProperties.Keycloak props) {
+        var config = createPolicyEnforcerConfig(props);
+        var policyEnforcerFilter = new ServletPolicyEnforcerFilter(request -> config);
+
+        return new ConditionallyDisabledFilter(policyEnforcerFilter, ALLOW_ALL_REQUEST_MATCHERS);
+    }
+
+    private PolicyEnforcerConfig createPolicyEnforcerConfig(ResourceServerProperties.Keycloak props) {
+        var config = new PolicyEnforcerConfig();
+        config.setAuthServerUrl(props.baseUrl());
+        config.setRealm(props.realm());
+        config.setResource(props.clientId());
+        config.setCredentials(Map.of("secret", props.clientSecret()));
+        config.setEnforcementMode(PolicyEnforcerConfig.EnforcementMode.ENFORCING);
+
+        return config;
     }
 }

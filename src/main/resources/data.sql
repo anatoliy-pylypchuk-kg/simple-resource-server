@@ -1,17 +1,17 @@
 INSERT INTO account (name, currency, balance, owner_id)
-VALUES ('Account 01', 'USD', 1, UUID '95a5d05f-f432-41e2-bfac-f14c7b5ab507'),
-       ('Account 02', 'USD', 2, UUID '95a5d05f-f432-41e2-bfac-f14c7b5ab507'),
-       ('Account 03', 'USD', 3, UUID '95a5d05f-f432-41e2-bfac-f14c7b5ab507'),
-       ('Account 04', 'USD', 4, UUID '95a5d05f-f432-41e2-bfac-f14c7b5ab507'),
-       ('Account 05', 'USD', 5, UUID '95a5d05f-f432-41e2-bfac-f14c7b5ab507'),
-       ('Account 06', 'USD', 6, UUID '95a5d05f-f432-41e2-bfac-f14c7b5ab507'),
-       ('Account 07', 'USD', 7, UUID '95a5d05f-f432-41e2-bfac-f14c7b5ab507'),
-       ('Account 08', 'USD', 8, UUID '95a5d05f-f432-41e2-bfac-f14c7b5ab507'),
-       ('Account 09', 'USD', 9, UUID '95a5d05f-f432-41e2-bfac-f14c7b5ab507'),
-       ('Account 10', 'USD', 10, UUID '95a5d05f-f432-41e2-bfac-f14c7b5ab507'),
-       ('Account 11', 'USD', 11, UUID '95a5d05f-f432-41e2-bfac-f14c7b5ab507'),
-       ('Account 12', 'USD', 12, UUID '95a5d05f-f432-41e2-bfac-f14c7b5ab507'),
-       ('Account 13', 'USD', 13, UUID '95a5d05f-f432-41e2-bfac-f14c7b5ab507');
+VALUES ('Account 01', 'USD', 1, UUID '894471fa-005d-46a2-bcde-c468103b1f97'),
+       ('Account 02', 'USD', 2, UUID '894471fa-005d-46a2-bcde-c468103b1f97'),
+       ('Account 03', 'USD', 3, UUID '894471fa-005d-46a2-bcde-c468103b1f97'),
+       ('Account 04', 'USD', 4, UUID '894471fa-005d-46a2-bcde-c468103b1f97'),
+       ('Account 05', 'USD', 5, UUID '894471fa-005d-46a2-bcde-c468103b1f97'),
+       ('Account 06', 'USD', 6, UUID '894471fa-005d-46a2-bcde-c468103b1f97'),
+       ('Account 07', 'USD', 7, UUID '894471fa-005d-46a2-bcde-c468103b1f97'),
+       ('Account 08', 'USD', 8, UUID '894471fa-005d-46a2-bcde-c468103b1f97'),
+       ('Account 09', 'USD', 9, UUID '894471fa-005d-46a2-bcde-c468103b1f97'),
+       ('Account 10', 'USD', 10, UUID '894471fa-005d-46a2-bcde-c468103b1f97'),
+       ('Account 11', 'USD', 11, UUID '894471fa-005d-46a2-bcde-c468103b1f97'),
+       ('Account 12', 'USD', 12, UUID '894471fa-005d-46a2-bcde-c468103b1f97'),
+       ('Account 13', 'USD', 13, UUID '894471fa-005d-46a2-bcde-c468103b1f97');
 
 INSERT INTO card (name_on_card, card_number, expiry_date, cvv, account_id)
 VALUES ('Anatoliy Pylypchuk', '5119016999393526', DATE '2025-01-01', '123', 1),

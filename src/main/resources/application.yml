@@ -58,7 +58,7 @@ resource-server:
     base-url: http://localhost:8080
     realm: lecture
     client-id: resource-server
-    client-secret: HFKj9uZ0afaUEBJ3gMhApUAZk1PkeQG1
+    client-secret: Gielee0s4q2BIpKVioM3BCqHHuctNIT4
 
   swagger:
     title: Simple Resource Server

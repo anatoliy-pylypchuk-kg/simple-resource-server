@@ -50,7 +50,7 @@ springdoc:
     oauth:
       client-id: swagger
       app-name: Swagger
-      use-pkce-with-authorization-code-grant: true
+      use-pkce-with-authorization-code-grant: false
     persist-authorization: true
 
 resource-server:

@@ -2,7 +2,7 @@ package com.kindgeek.srs.application.cards;
 
 import com.kindgeek.srs.application.cards.data.OpenCardRequest;
 import com.kindgeek.srs.application.cards.data.CardResponse;
-import com.kindgeek.srs.entity.Card_;
+import com.kindgeek.srs.domain.Card_;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;

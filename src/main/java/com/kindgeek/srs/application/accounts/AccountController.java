@@ -3,7 +3,7 @@ package com.kindgeek.srs.application.accounts;
 import com.kindgeek.srs.application.accounts.data.OpenAccountRequest;
 import com.kindgeek.srs.application.accounts.data.UpdateAccountRequest;
 import com.kindgeek.srs.application.accounts.data.AccountResponse;
-import com.kindgeek.srs.entity.Account_;
+import com.kindgeek.srs.domain.Account_;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
